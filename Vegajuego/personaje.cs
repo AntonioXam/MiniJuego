@@ -45,8 +45,8 @@ namespace Vegajuego
         }
         public Level1 Lienzo
         {
-            get { return Lienzo; }
-            set {  Lienzo =value;}
+            get { return lienzo; }
+            set {  Lienzo =value; }
         }
         public PictureBox Caja
         {
