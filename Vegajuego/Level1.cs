@@ -6,20 +6,28 @@ namespace Vegajuego
     {
         Link Player;
         Broncas Enemigo1;
-        public Level1()
+        SoundPlayer musica;
+        Boolean HaySonido = false;
+        public Level1(CheckBox onOff)
         {
             InitializeComponent();
             IniciarPersonajes();
-            IniciarOpcionesDelMapa();
-           
+            IniciarOpcionesDelMapa(onOff);
+
         }
-        private void IniciarOpcionesDelMapa()
+        private void IniciarOpcionesDelMapa(CheckBox onOff)
         {
+            if (onOff.Checked == true)
+            {
+                musica = new SoundPlayer(global::Vegajuego.Properties.Resources.sonido);
+                musica.PlayLooping();
+                HaySonido |= true;
+            }
             labelVida.Text = "Salud->" + Player.Salud;
             labelEscudo.Text = "Escudo->" + Player.Escudo;
             labelArma.Text = "Arma->" + Player.Arma;
         }
-       
+
         private void IniciarPersonajes()
         {
 
@@ -47,16 +55,23 @@ namespace Vegajuego
                 }
                 Enemigo1.mover();
 
-                if(Player.Salud<=0)
+                if (Player.Salud <= 0)
                 {
                     this.Hide();
+                    if(HaySonido == true)
+                    {
+                        musica.Stop();
+                    }
                     Final End = new Final();
                     MovEnemigos.Stop();
                     End.Show();
                 }
             }
         }
-        
 
+        private void Leve1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -66,7 +66,7 @@
             labelVida.ForeColor = Color.Gold;
             labelVida.Location = new Point(645, 145);
             labelVida.Name = "labelVida";
-            labelVida.Size = new Size(39, 19);
+            labelVida.Size = new Size(46, 23);
             labelVida.TabIndex = 1;
             labelVida.Text = "Vida";
             // 
@@ -89,7 +89,7 @@
             labelEscudo.ForeColor = Color.Gold;
             labelEscudo.Location = new Point(645, 190);
             labelEscudo.Name = "labelEscudo";
-            labelEscudo.Size = new Size(55, 19);
+            labelEscudo.Size = new Size(65, 23);
             labelEscudo.TabIndex = 3;
             labelEscudo.Text = "Escudo";
             // 
@@ -101,7 +101,7 @@
             labelArma.ForeColor = Color.Gold;
             labelArma.Location = new Point(645, 231);
             labelArma.Name = "labelArma";
-            labelArma.Size = new Size(46, 19);
+            labelArma.Size = new Size(54, 23);
             labelArma.TabIndex = 4;
             labelArma.Text = "Arma";
             // 
@@ -134,6 +134,7 @@
             Name = "Level1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "VegaZelda";
+            FormClosed += Leve1_FormClosed;
             KeyPress += Level1_KeyPress;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
